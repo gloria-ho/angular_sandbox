@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-4">
                 <input type="text"
-                    [(ngModel)]='listFilter' />
+                    [(ngModel)]="listFilter" />
             </div>
         </div>
 
@@ -29,7 +29,7 @@
                         <button class="btn btn-primary"
                             (click)="toggleImage()"
                         >
-                            {{showImage ? "Hide" : "Show"}} Image
+                            {{showImage ? 'Hide' : 'Show'}} Image
                         </button>
                     </th>
                     <th>Product</th>
@@ -43,7 +43,7 @@
                 <tr *ngFor="let product of products">
                     <td><img *ngIf="showImage"
                             [src]="product.imageUrl"
-                            [title]="product.productName"
+                            [title]="product.productName | uppercase"
                             alt="{{product.productName}} image"
                             [style.width.px] = "imageWidth"
                             [style.margin.px] = "imageMargin">
@@ -51,7 +51,7 @@
                     <td>{{ product.productName }}</td>
                     <td>{{ product.productCode }}</td>
                     <td>{{ product.releaseDate }}</td>
-                    <td>{{ product.price }}</td>
+                    <td>{{ product.price | currency:'USD':'symbol':'1.1-2' }}</td>
                     <td>{{ product.starRating }}</td>
                 </tr>
             </tbody>
