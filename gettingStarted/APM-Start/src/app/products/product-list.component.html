@@ -2,6 +2,7 @@
     <div class="card-header">
         {{pageTitle}}
     </div>
+
     <div class="body">
 
         <div class="row">
@@ -19,7 +20,8 @@
             </div>
         </div>
 
-        <table class="table">
+        <table class="table"
+            *ngIf="products && products.length">
             <thead>
                 <tr>
                     <th>
@@ -31,7 +33,7 @@
                     <th>Code</th>
                     <th>Available</th>
                     <th>Price</th>
-                    <th>Star Rating</th>
+                    <th>5 Star Rating</th>
                 </tr>
             </thead>
             <tbody>
