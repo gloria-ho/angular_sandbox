@@ -40,7 +40,9 @@
                 <tr *ngFor="let product of products">
                     <td><img [src]="product.imageUrl"
                             [title]="product.productName"
-                            alt="{{product.productName}} image">
+                            alt="{{product.productName}} image"
+                            [style.width.px] = "imageWidth"
+                            [style.margin.px] = "imageMargin">
                     </td>
                     <td>{{ product.productName }}</td>
                     <td>{{ product.productCode }}</td>
